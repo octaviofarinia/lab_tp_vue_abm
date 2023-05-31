@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/GrillaPlatos.vue")
   },
   {
+    path: "/listaInstrumentos",
+    name: "GrillaInstrumentos",
+    component: () => import("../views/GrillaInstrumentos.vue")
+  },
+  {
     path: "/formulario/:id",
     name: "FormularioPlato",
     component: () => import("../views/FormularioPlato.vue")
