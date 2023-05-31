@@ -29,11 +29,29 @@ public class InstrumentoService {
         return instrumento;
     }
 
+    public void delete(Long id) {
+        instrumentoRepository.deleteById(id);
+    }
+
     @Transactional
     public void saveList(List<Instrumento> instrumentos) {
         for (Instrumento instrumento : instrumentos) {
             instrumentoRepository.save(instrumento);
         }
+    }
+
+    @Transactional
+    public void save(Instrumento instrumento) {
+        instrumentoRepository.save(instrumento);
+    }
+
+    @Transactional
+    public void update(Instrumento instrumento) throws Exception {
+        if(instrumento.getId() == null) {
+            throw new Exception("La id no puede ser nula");
+        }
+
+        instrumentoRepository.save(instrumento);
     }
 
     public Resource loadImage(String imageName) {

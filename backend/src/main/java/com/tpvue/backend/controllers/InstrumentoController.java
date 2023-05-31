@@ -37,6 +37,36 @@ public class InstrumentoController {
         }
     }
 
+    @PostMapping("")
+    public ResponseEntity<?> save(@RequestBody Instrumento instrumento) {
+        try {
+            instrumentoService.save(instrumento);
+            return ResponseEntity.status(HttpStatus.CREATED).body("");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"Error. Por favor intente mas tarde\"}");
+        }
+    }
+
+    @PutMapping("")
+    public ResponseEntity<?> update(@RequestBody Instrumento instrumento) {
+        try {
+            instrumentoService.update(instrumento);
+            return ResponseEntity.status(HttpStatus.CREATED).body("");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"Error. Por favor intente mas tarde\"}");
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        try {
+            instrumentoService.delete(id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"Error. Por favor intente mas tarde\"}");
+        }
+    }
+
     @PostMapping("/save-list")
     public ResponseEntity<?> saveList(@RequestBody List<Instrumento> instrumentos) {
         try {

@@ -28,6 +28,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/FormularioPlato.vue")
   },
   {
+    path: "/instrumentos/formulario/:id",
+    name: "FormularioInstrumento",
+    component: () => import("../views/FormularioInstrumento.vue")
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting

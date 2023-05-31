@@ -24,7 +24,7 @@
                         <a class="nav-link" href="/listaInstrumentos">Grilla INSTRUMENTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Formulario INSTRUMENTOS</a>
+                        <a class="nav-link" href="/instrumentos/formulario/0">Formulario INSTRUMENTOS</a>
                     </li>
                 </ul>
                 <form class="d-flex">
